@@ -18,8 +18,10 @@
                     <a href="{{url('/tamu')}}" class="btn btn-dark btn-sm btn-flat pull-right">Kembali ke Tamu</a>
                 </div>
 
-                <div class="col-md-4">
-                    <form action="/search" method="get"><br>
+                {{-- <div class="col-md-4">
+                    <form action="/cekin/search" method="post">
+                        @csrf
+                        <br>
                         <div class="input-group custom-search-form">
                             <input type="search" name="search" class="form-control" placeholder="Cari Nama Tamu.....'-'">
                             <span class="input-group-btn">
@@ -28,14 +30,16 @@
                         </div>
                     </form>
 
-                <form action="/search" method="get"><br>
+                <form action="/cekin/filter" method="post">
+                    @csrf
+                    <br>
                         <div class="input-group custom-search-form">
-                            <input type="date" name="search" class="form-control" placeholder="Cari Nama Tamu.....'-'">
+                            <input type="date" name="filter" class="form-control" placeholder="Cari Nama Tamu.....'-'">
                             <span class="input-group-btn">
                                 <button type="submit" class="btn btn-primary">Filter</button>
                             </span>
                         </div>
-                    </form>
+                    </form> --}}
                     {{-- <form action="/search" method="get"><br>
                         <div class="input-group custom-search-form">
                             <input type="date" name="search" class="form-control" placeholder="Cari Nama Tamu.....'-'">
@@ -44,6 +48,30 @@
                             </span>
                         </div>
                     </form> --}}
+                    <form class="d-flex" action="{{ route('cekinsearch') }}" method="POST">
+                        @csrf
+
+                        <div class="form-floating">
+                            <input required type="text" name="nama_tamu" class="form-control" id="nama_tamu" value=""
+                                style="width : 250px">
+                            <P for="floatingInputGrid">Search ( Nama Tamu)</P>
+                        </div>
+                        <button class="btn-sm btn-success" type="submit">Search</button>
+                    </form>
+
+                </div>
+                {{-- <div class="col-sm">
+                </div> --}}
+                <div class="col-sm">
+                    <form action="{{ route('cekinfilter') }}" class="d-flex" method="POST">
+                        @csrf
+                        <div class="form-floating">
+                            <input required type="date" name="tgl_checkin" class="form-control" id="tgl_checkin" value=""
+                                style="width : 250px">
+                            <P for="floatingInputGrid">Filter ( tanggal rgl-in)</P>
+                        </div>
+                        <button class="btn-sm btn-success" type="submit">Filter</button>
+                    </form>
                 </div>
 
                 <div class="card-body">                    
@@ -159,7 +187,7 @@
                 <div class="modal-footer">   
                     <a href="{{route('cekin.index')}}" class="btn btn-primary" data-dismiss="modal">Back</a>
 
-                    {!! $cekin->appends(Request::all())->links() !!}
+                    {{-- {!! $cekin->appends(Request::all())->links() !!} --}}
                     {{-- {!! $Search->appends(Request::all())->links() !!} --}}
                     
                     </div>

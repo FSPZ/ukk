@@ -38,11 +38,11 @@ class KamarController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
-    public function search(Request $request)
-    {
-        $search = Kamar::where('tipe_kamar','like', "%" . $request->search . "%")->paginate(4);
-        return view('kamar.index',['kamar' => $search]);
-    }
+    // public function search(Request $request)
+    // {
+    //     $search = Kamar::where('tipe_kamar','like', "%" . $request->search . "%")->paginate(4);
+    //     return view('kamar.index',['kamar' => $search]);
+    // }
 
     /**
 

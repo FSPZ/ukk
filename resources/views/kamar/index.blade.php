@@ -19,16 +19,16 @@
 
                 </div>
 
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <form action="/search" method="get"><br>
                         <div class="input-group custom-search-form">
-                            <input type="search" name="search" class="form-control" placeholder="Cari Tipe Kamar yang ada.....'-'">
+                            <input type="search" name="search" id="tipe_kamar" class="form-control" placeholder="Cari Tipe Kamar yang ada.....'-'">
                             <span class="input-group-btn">
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </span>
                         </div>
                     </form>
-                </div>
+                </div> --}}
 
                 <div class="card-body">                    
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use App\Cekin;
 use Illuminate\Http\Request;
@@ -56,8 +57,13 @@ class CekinController extends Controller
 
     public function search(Request $request)
     {
-        $search = Cekin::where('nama_tamu','like', "%" . $request->search . "%")->paginate(4);
-        return view('cekin.index',['cekin' => $search]);
+        // dd($request->nama_tamu);
+        // $search = Cekin::where('nama_tamu','like', "%" . $request->search . "%")->paginate(4);
+        // return view('cekin/index',['cekin' => $search]);
+
+        $cekin = DB::table('cekin')->where('nama_tamu', $request->nama_tamu)->get();
+
+        return view('cekin.index', ['cekin' => $cekin]);
     }
    public function show(Cekin $cekin)
     {
@@ -96,15 +102,25 @@ class CekinController extends Controller
                         ->with('success','Cekin deleted successfully');
     }
 
-    public function cari(Request $request){
-        // dd($request);
+    // public function cari(Request $request){
+    //     // dd($request);
          
-        $search = Cekin::where('tgl_in','like', "%" . $request->search . "%")->paginate(4);
-        return view('cekin.index',['cekin' => $search]);
+    //     $search = Cekin::where('tgl_in','like', "%" . $request->filter . "%")->paginate(4);
+    //     return view('cekin/index',['cekin' => $search]);
 
-        // $cekin = DB::table('cekin')->where('tgl_in', $request)->get();
+    //     // $cekin = DB::table('cekin')->where('tgl_in', $request)->get();
 
-        // return view('cekin.index');
+    //     // return view('cekin.index');
+    // }
+
+  
+    public function filter(Request $request)
+    {
+
+        // dd($request->tgl_checkin);
+        $cekin = DB::table('cekin')->where('tgl_in', $request->tgl_checkin)->get();
+
+        return view('cekin.index', ['cekin' => $cekin]);
     }
 
 }
