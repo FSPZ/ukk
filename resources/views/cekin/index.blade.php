@@ -68,7 +68,7 @@
                         <div class="form-floating">
                             <input required type="date" name="tgl_checkin" class="form-control" id="tgl_checkin" value=""
                                 style="width : 250px">
-                            <P for="floatingInputGrid">Filter ( tanggal rgl-in)</P>
+                            <P for="floatingInputGrid">Filter ( tanggal masuk)</P>
                         </div>
                         <button class="btn-sm btn-success" type="submit">Filter</button>
                     </form>
@@ -170,6 +170,10 @@
                    <label class="h5" for="">Email :</label>
                    <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">{{$row->email}}</h5>
+                   </div>
+                   <label class="h5" for="">Tipe Kamar :</label>
+                   <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{$row->tipe}}</h5>
                    </div>
                 <div class="modal-footer">
                     {{-- <a href="/resepkmr/{{$row->id}}" class="btn btn-sm  btn-success mb-4">Cetak</a> --}}

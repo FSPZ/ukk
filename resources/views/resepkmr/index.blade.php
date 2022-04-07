@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h1><strong>D</strong>ata Cekin</h1>
+            <h1><strong>D</strong>ata Chek in</h1>
         </div>
         <br>
         <br>
@@ -89,6 +89,10 @@
                    <label class="h5" for="">Email :</label>
                    <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">{{$row->email}}</h5>
+                   </div>
+                   <label class="h5" for="">Tipe Kamar :</label>
+                   <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{$row->tipe}}</h5>
                    </div>
                 <div class="modal-footer">
                     <a href="/resepkmr/{{$row->id}}" class="btn btn-sm  btn-success mb-4">Cetak</a>

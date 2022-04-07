@@ -23,6 +23,11 @@ class CekinController extends Controller
 
     public function store(Request $request)
     {
+        // $awal = DB::table('kamars')->where('tipe_kamar', $request->tipe_kamar)->value('jumlah_kamar');
+
+        // DB::table('kamars')->where('tipe_kamar', $request->tipe_kamar)->update([
+        //     'jumlah_kamar' => $awal - $request->jumlah_kamar
+        // ]);
         // dd($request);
         $data=array(
 
@@ -38,8 +43,9 @@ class CekinController extends Controller
 
             'no_telp'  => $request->input('no_telp'),
 
-            'email'  => $request->input('email')
+            'email'  => $request->input('email'),
 
+            'tipe'  => $request->input('tipe')
 
     );
 
@@ -79,12 +85,13 @@ class CekinController extends Controller
     {
         $request->validate([
             'nama_tamu' => 'required',
-            'tgl_in' => 'required',
-            'tgl_out' => 'required',
+            'tgl_in' => 'required|date|after_or_equal:today',
+            'tgl_out' => 'required|date|after:tgl_in',
             'jmlh_kmr' => 'required',
             'nama_pemesan' => 'required',
             'no_telp' => 'required',
             'email' => 'required',
+            'tipe' => 'required',
 
         ]);
 

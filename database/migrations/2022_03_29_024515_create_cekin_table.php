@@ -22,6 +22,7 @@ class CreateCekinTable extends Migration
             $table->string('nama_pemesan');
             $table->string('no_telp');
             $table->string('email');
+            $table->string('tipe');
             $table->timestamps();
         });
     }

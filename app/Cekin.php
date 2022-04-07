@@ -17,5 +17,6 @@ class Cekin extends Model
         'nama_pemesan' ,
         'no_telp' ,
         'email' ,
+        'tipe',
     ];
 }

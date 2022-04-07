@@ -135,7 +135,7 @@ transition: max-height 0.2s ease-out;
                          <li><a href="/" class="smoothScroll">Home</a></li>
                          <li><a href="#team" class="smoothScroll">Kamar</a></li>
                          <li><a href="#courses" class="smoothScroll">Fasilitas</a></li>
-                         <li><a href=" {{url('resepkmr')}} " class="smoothScroll">Data Cek in</a></li>
+                         <li><a href=" {{url('resepkmr')}} " class="smoothScroll">Data Chek in</a></li>
                          <li><a href=" {{url('tamkar')}} " class="smoothScroll">Kamar Ters</a></li>
                          <li><a href=" {{url('tamfas')}} " class="smoothScroll">Fasilitas Ters</a></li>
                          <li><a href=" {{url('tamhol')}} " class="smoothScroll">Hotel Ters</a></li>
@@ -250,7 +250,7 @@ transition: max-height 0.2s ease-out;
                     
                                                     <div class="col-lg-5">
                     
-                                                        <input type="text" name="jumlah_kamar" placeholder="Jumlah Kamar" class="form-control">
+                                                        <input type="number" name="jumlah_kamar" placeholder="Jumlah Kamar" class="form-control">
                     
                                                     </div>
                     
@@ -281,7 +281,7 @@ transition: max-height 0.2s ease-out;
                         
                                                         <div class="col-lg-5">
                         
-                                                            <input  type="text" name="email" placeholder="Email" class="form-control">
+                                                            <input  type="email" name="email" placeholder="Email" class="form-control">
                         
                                                         </div>
                         
@@ -291,7 +291,7 @@ transition: max-height 0.2s ease-out;
                         
                                                         <div class="col-lg-5">
                         
-                                                            <input type="text" name="no_telp" placeholder="No Handphone" class="form-control">
+                                                            <input type="number" name="no_telp" placeholder="No Handphone" class="form-control">
                         
                                                         </div>
                         
@@ -305,6 +305,16 @@ transition: max-height 0.2s ease-out;
                                                         </div>
                         
                                                     </div> 
+
+                                                    <div class="form-group"><label class="col-lg-3 control-label"><b>Tipe Kamar :</b></label>
+                                                        <div class="col-lg-5">
+                                                        <select class="form-control" name="tipe" placeholder="Tipe Kamar">
+                                                                    <option></option>
+                                                                    <option>Superior</option>
+                                                                    <option>Deluxe</option>
+                                                                </select>
+                                                        </div>
+                                                    </div>
                         
                                                 <div class="modal-footer">      
                         
@@ -433,7 +443,7 @@ transition: max-height 0.2s ease-out;
                                    <img src="images/ka1.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
-                                    <h2>Superior</h2>
+                                    <h2>Deluxe</h2>
                                     <h3>Fasilitas :</h3>
                                     <span>1.) Kamar berkuran luas 45 Meter persegi</span><br>
                                     <span>2.) Kamar mandi shower dan Bath Tub</span><br>

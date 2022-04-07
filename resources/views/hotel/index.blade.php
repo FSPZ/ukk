@@ -102,7 +102,7 @@
                                     </div>
                                     <label class="h5" for="">Gambar Fasilitas :</label>
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle"><img src="{{asset('fotohotel/'.$row->gambar)}}" alt="" style="width:350px; height:130px;"></h5>
+                                    <h5 class="modal-title" id="exampleModalLongTitle"><img src="{{asset('fotohotel/'.$row->gambar)}}" alt="" style="width:400px; height:250px;"></h5>
                                    </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
