@@ -16,7 +16,7 @@
      <link rel="stylesheet" href="css/owl.carousel.css">
      <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
-     
+
 
      <!-- MAIN CSS -->
      {{-- <link rel="stylesheet" href="css/templatemo-style.css"> --}}
@@ -26,9 +26,9 @@
      <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
      <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
      {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-     
+
     <style>
-    
+
     .collapsible {
   background-color: #777;
   color: white;
@@ -109,7 +109,7 @@ transition: max-height 0.2s ease-out;
           <div class="spinner">
 
                <span class="spinner-rotate"></span>
-               
+
           </div>
      </section>
 
@@ -145,7 +145,7 @@ transition: max-height 0.2s ease-out;
                          <li><a href="#testimonial" class="smoothScroll">Reviews</a></li>
                          <li><a href="#contact" class="smoothScroll">Contact</a></li> --}}
                     </ul>
-{{-- 
+{{--
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#"><i class="fa fa-phone"></i> +62 878 6336 7302</a></li>
                     </ul> --}}
@@ -203,108 +203,117 @@ transition: max-height 0.2s ease-out;
       <!-- FEATURE -->
       <section id="feature">
             <div class="container">
-                
-                
+
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
                 <div class="row justify-content-center">
-                    
+
                     <div class="col-md-12">
-                        
+
                         <div class="card">
-                            
+
                             <div class="card-header">
-                                
+
                             </div>
-                            
-                            <div class="card-body">                    
+
+                            <div class="card-body">
                                 <div class="kiridikit">
-    
-                                        <form name="frm_add" id="frm_add" class="form-horizontal" action="{{route('cekin.store')}}" method="POST" enctype="multipart/form-data"> 
-                                    
+
+                                        <form name="frm_add" id="frm_add" class="form-horizontal" action="{{route('cekin.store')}}" method="POST" enctype="multipart/form-data">
+
                                             @csrf
-                                            
-                                            <div class="modal-body">             
-                    
-                                                
+
+                                            <div class="modal-body">
+
+
                                                 <div class="form-group"><label class="col-lg-3 control-label">Tanggal in :</label>
-                                                    
+
                                                     <div class="col-lg-5">
-                                                        
+
                                                         <input type="date" name="tgl_in" placeholder="Tanggal In" class="form-control">
-                                                        
+
                                                     </div>
-                                                    
-                                                </div>    
-                                                
+
+                                                </div>
+
                                                 <div class="form-group"><label class="col-lg-3 control-label">Tanggal Out :</label>
-                                                    
+
                                                     <div class="col-lg-5">
-                                                        
+
                                                         <input type="date" name="tgl_out" placeholder="Tanggal Out" class="form-control">
-                                                        
+
                                                     </div>
-                                                    
-                                                </div>                              
-                                                
-                                                
+
+                                                </div>
+
+
                                                 <div class="form-group"><label class="col-lg-3 control-label"><b>Jumlah Kamar :</b></label>
-                    
+
                                                     <div class="col-lg-5">
-                    
-                                                        <input type="number" name="jumlah_kamar" placeholder="Jumlah Kamar" class="form-control">
-                    
+
+                                                        <input type="number"  name="jumlah_kamar" placeholder="Jumlah Kamar" class="form-control">
+
                                                     </div>
-                    
-                                                </div> 
-                                                
-                                                
-                                            </div>      
-                    
-               
-                    
-        
+
+                                                </div>
+
+
+                                            </div>
+
+
+
+
                                     <button class="collapsible">Pesan</button>
                                     <div class="content">
-                                        
-                                                
-                                                <div class="modal-body">             
-                        
+
+
+                                                <div class="modal-body">
+
                                                     <div class="form-group"><label class="col-lg-3 control-label"><b>Nama Pemesan :</b></label>
-                        
+
                                                         <div class="col-lg-5">
-                        
+
                                                             <input required type="text" name="nama_pemesan" placeholder="Nama Pemesan" class="form-control">
-                        
+
                                                         </div>
-                        
-                                                    </div> 
+
+                                                    </div>
                                                     <div class="form-group"><label class="col-lg-3 control-label"><b>Email :</b></label>
-                        
+
                                                         <div class="col-lg-5">
-                        
+
                                                             <input  type="email" name="email" placeholder="Email" class="form-control">
-                        
+
                                                         </div>
-                        
-                                                    </div> 
-                                                    
+
+                                                    </div>
+
                                                     <div class="form-group"><label class="col-lg-3 control-label"><b>No Handphone :</b></label>
-                        
+
                                                         <div class="col-lg-5">
-                        
+
                                                             <input type="number" name="no_telp" placeholder="No Handphone" class="form-control">
-                        
+
                                                         </div>
-                        
-                                                    </div> 
+
+                                                    </div>
                                                     <div class="form-group"><label class="col-lg-3 control-label"><b>Nama Tamu :</b></label>
-                        
+
                                                         <div class="col-lg-5">
-                        
+
                                                             <input type="text" name="nama_tamu" placeholder="Nama Tamu" class="form-control">
-                        
+
                                                         </div>
-                        
-                                                    </div> 
+
+                                                    </div>
 
                                                     <div class="form-group"><label class="col-lg-3 control-label"><b>Tipe Kamar :</b></label>
                                                         <div class="col-lg-5">
@@ -315,31 +324,31 @@ transition: max-height 0.2s ease-out;
                                                                 </select>
                                                         </div>
                                                     </div>
-                        
-                                                <div class="modal-footer">      
-                        
+
+                                                <div class="modal-footer">
+
                                                     <a href="{{route('cekin.index')}}" class="btn btn-danger" data-dismiss="modal">Back</a>
-                        
+
                                                     <button type="submit" class="btn btn-primary">Simpan</button>
-                        
+
                                                 </div>
-                        
+
                                             </form>
                                 </div>
-                                  
+
                                 </div>
-                            
+
                             </div>
-            
+
                         </div>
-            
+
                     </div>
-            
+
                 </div>
          </section>
 
 
-     
+
 
 
      {{-- <!-- ABOUT -->
@@ -472,7 +481,7 @@ transition: max-height 0.2s ease-out;
      </section>
 
 
-     
+
 
      <!-- Courses -->
      <section id="courses">
@@ -704,7 +713,7 @@ transition: max-height 0.2s ease-out;
 
                               <div class="col-md-12 col-sm-12">
                                    <input type="text" class="form-control" placeholder="Masukkan Nama Lengkap" name="name" required="">
-                    
+
                                    <input type="email" class="form-control" placeholder="Masukkan email" name="email" required="">
 
                                    <textarea class="form-control" rows="6" placeholder="Tulis pesan apa yang ingin kamu tanya" name="message" required=""></textarea>
@@ -752,9 +761,9 @@ transition: max-height 0.2s ease-out;
                                    <li><a href="#" class="fa fa-instagram"></a></li>
                               </ul>
 
-                              <div class="copyright-text"> 
+                              <div class="copyright-text">
                                    <p>Copyright &copy; 2022 Company Name</p>
-                                   
+
                                    <p>Design: TemplateMo</p>
                               </div>
                          </div>
@@ -798,7 +807,7 @@ transition: max-height 0.2s ease-out;
                               </div>
                          </div>
                     </div>
-                    
+
                </div>
           </div>
      </footer>
@@ -811,9 +820,14 @@ transition: max-height 0.2s ease-out;
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
      <script>
+
+            // var coll = document.getElementsByClassName("jumlah");
+            // if (coll  < 0) {
+            //     alert('woiasuuuu');
+            // }
             var coll = document.getElementsByClassName("collapsible");
             var i;
-            
+
             for (i = 0; i < coll.length; i++) {
               coll[i].addEventListener("click", function() {
                 this.classList.toggle("active");
@@ -822,7 +836,7 @@ transition: max-height 0.2s ease-out;
                   content.style.maxHeight = null;
                 } else {
                   content.style.maxHeight = content.scrollHeight + "px";
-                } 
+                }
               });
             }
             </script>

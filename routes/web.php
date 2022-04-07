@@ -35,8 +35,11 @@ Route::resource('/resepkmr', 'ResepkmrController');
 Route::get('/resepkmr/{id}', 'ResepkmrController@cetak');
 // Route::resource('/resepkmr', 'ResepkmrController');
 Route::resource('/cekin', 'CekinController');
+Route::get('rekap', 'CekinController@rekap')->name('rekap');
 Route::post('/cekin/filter', 'CekinController@filter')->name('cekinfilter');
 Route::post('/cekin/search', 'CekinController@search')->name('cekinsearch');
+Route::post('/cekin/filterin', 'CekinController@filterin')->name('cekinfilterin');
+Route::post('/cekin/searching', 'CekinController@searching')->name('cekinsearching');
 
 // Route untuk Tamu
 Route::resource('/tamkar', 'TamkarController');

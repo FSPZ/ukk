@@ -19,7 +19,7 @@
 
                 </div>
 
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <form action="/search" method="get"><br>
                         <div class="input-group custom-search-form">
                             <input type="search" name="search" class="form-control" placeholder="Cari Tipe Kamar yang ada.....'-'">
@@ -28,9 +28,9 @@
                             </span>
                         </div>
                     </form>
-                </div>
+                </div> --}}
 
-                <div class="card-body">                    
+                <div class="card-body">
 
                     <table id="tbl_list" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
@@ -50,7 +50,7 @@
 
                     </thead>
 
-                    <tbody>  
+                    <tbody>
 
                         @foreach($fasilitas as $i =>$row)
 
@@ -68,11 +68,11 @@
                                 {{-- <a href="#" class="btn btn-sm btn-primary">Lihat</a> --}}
 
                                 {{-- <button type="submit" class="btn btn-sm btn-dark">Hapus</button> --}}
-                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                {{-- <button type="submit" class="btn btn-sm btn-danger">Hapus</button> --}}
                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#{{ 'modal'.$row->id }}">
                                     Lihat
                                   </button>
-                                @csrf 
+                                @csrf
 
                                 @method('DELETE')
 
@@ -105,12 +105,12 @@
                     </tbody>
 
                 </table>
-                <div class="modal-footer">   
+                <div class="modal-footer">
                     <a href="{{route('fasilitas.index')}}" class="btn btn-success" data-dismiss="modal">Back</a>
 
                     {!! $fasilitas->appends(Request::all())->links() !!}
                     {{-- {!! $Search->appends(Request::all())->links() !!} --}}
-                    
+
                     </div>
 
                 </div>

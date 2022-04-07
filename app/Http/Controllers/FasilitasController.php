@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Fasilitas;
-
+use DB;
 use Illuminate\Http\Request;
 
 class FasilitasController extends Controller
@@ -78,15 +78,15 @@ class FasilitasController extends Controller
 
     {
 
-        $data=array(
+        $request->validate([
+            'tipe_kamar' => 'required|min:1',
+            'nama_fasilitas' => 'required|min:1'
+        ]);
 
-                'tipe_kamar'  => $request->input('tipe_kamar'),
-
-                'nama_fasilitas' => $request->post('nama_fasilitas')
-
-        );
-
-        Fasilitas::create($data);
+        DB::table('fasilitas')->insert([
+            'tipe_kamar' => $request->tipe_kamar,
+            'nama_fasilitas' => $request->nama_fasilitas
+        ]);
 
         return redirect()->route('fasilitas.index');
 
@@ -172,9 +172,9 @@ class FasilitasController extends Controller
 
     {
 
-        $fasilita->delete();
+        // $fasilita->delete();
 
-        return redirect()->route('fasilitas.index');
+        // return redirect()->route('fasilitas.index');
 
     }
 

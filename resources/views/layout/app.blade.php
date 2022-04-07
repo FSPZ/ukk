@@ -24,14 +24,14 @@
             body {font-family: Verdana, sans-serif;}
             .mySlides {display: none;}
             img {vertical-align: middle;}
-            
+
             /* Slideshow container */
             .slideshow-container {
               max-width: 100%;
               position: relative;
               margin: auto;
             }
-            
+
             /* Caption text */
             .text {
               color: #f2f2f2;
@@ -42,7 +42,7 @@
               width: 100%;
               text-align: center;
             }
-            
+
             /* Number text (1/3 etc) */
             .numbertext {
               color: #f2f2f2;
@@ -51,7 +51,7 @@
               position: absolute;
               top: 0;
             }
-            
+
             /* The dots/bullets/indicators */
             .dot {
               height: 15px;
@@ -62,22 +62,22 @@
               display: inline-block;
               transition: background-color 1.0s ease;
             }
-            
+
             .active {
               background-color: #717171;
             }
-            
+
             /* Fading animation */
             .fade {
               animation-name: fade;
               animation-duration: 4.0s;
             }
-            
+
             @keyframes fade {
-              from {opacity: .8} 
+              from {opacity: .8}
               to {opacity: 1}
             }
-            
+
             /* On smaller screens, decrease text size */
             @media only screen and (max-width: 300px) {
               .text {font-size: 11px}
@@ -95,18 +95,22 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-        
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-        
+
                     </ul>
-        
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto ">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                        <a class="nav-link active" href="{{route('cekin.index')}}">Cek Tamu</a>
+                            <a class="nav-link active" href="{{route('cekin.index')}}">Cek Tamu</a>
+                        </li>
+                        <li>
+                            <a class="nav-link active" href="{{route('rekap')}}">Laporan</a>
+
                         </li>
                         @guest
                             <li class="nav-item">

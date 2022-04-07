@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Kamar;
-
+use DB;
 use Illuminate\Http\Request;
 
 class KamarController extends Controller
@@ -78,15 +78,17 @@ class KamarController extends Controller
 
     {
 
-        $data=array(
+        $request->validate([
+            'tipe_kamar' => 'required|min:1',
+            'jumlah_kamar' => 'required|min:1'
+        ]);
 
-                'tipe_kamar'  => $request->input('tipe_kamar'),
+        DB::table('kamars')->where('tipe_kamar', $request->tipe_kamar)->update([
+            'jumlah_kamar' => DB::table('kamars')->where('tipe_kamar', $request->tipe_kamar)->value('jumlah_kamar') + $request->jumlah_kamar,
+        ]);
 
-                'jumlah_kamar' => $request->post('jumlah_kamar')
 
-        );
-
-        Kamar::create($data);
+        // Kamar::create($);
 
         return redirect()->route('kamar.index');
 
@@ -172,9 +174,9 @@ class KamarController extends Controller
 
     {
 
-        $kamar->delete();
+        // $kamar->delete();
 
-        return redirect()->route('kamar.index');
+        // return redirect()->route('kamar.index');
 
     }
 

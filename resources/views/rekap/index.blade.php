@@ -48,7 +48,7 @@
                             </span>
                         </div>
                     </form> --}}
-                    <form class="d-flex" action="{{ route('cekinsearch') }}" method="POST">
+                    <form class="d-flex" action="{{ route('cekinsearching') }}" method="POST">
                         @csrf
 
                         <div class="form-floating">
@@ -63,7 +63,7 @@
                 {{-- <div class="col-sm">
                 </div> --}}
                 <div class="col-sm">
-                    <form action="{{ route('cekinfilter') }}" class="d-flex" method="POST">
+                    <form action="{{ route('cekinfilterin') }}" class="d-flex" method="POST">
                         @csrf
                         <div class="form-floating">
                             <input required type="date" name="tgl_checkin" class="form-control" id="tgl_checkin" value=""
@@ -98,7 +98,7 @@
 
                     <tbody>
 
-                        @foreach($cekin as $i =>$row)
+                        @foreach($ckout as $i =>$row)
 
                         <tr>
 
@@ -117,7 +117,7 @@
                                 {{-- <a href="{{route('resepkmr.edit',$row->id)}}" class="btn btn-sm btn-primary">Edit</a> --}}
                                 {{-- <a href="#" class="btn btn-sm btn-dark">Lihat Konfir</a> --}}
 
-                                <button type="submit" class="btn btn-sm btn-danger">Cek out</button>
+                                {{-- <button type="submit" class="btn btn-sm btn-danger">Cek out</button> --}}
                                 {{-- <a href="{{ url('exportlaporan') }}" class="btn btn-sm  btn-success mb-4">Export PDF</a> --}}
 
                                 <button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#{{ 'modal'.$row->id }}">
