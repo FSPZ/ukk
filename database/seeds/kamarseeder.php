@@ -13,11 +13,11 @@ class kamarseeder extends Seeder
     {
         $kamar = kamar::create([
             'tipe_kamar' => 'deluxe',
-            'jumlah_kamar' => '0',
+            'jumlah_kamar' => 0,
         ]);
         $kamar = kamar::create([
             'tipe_kamar' => 'Superior',
-            'jumlah_kamar' => '0',
+            'jumlah_kamar' => 0,
 
         ]);
 
